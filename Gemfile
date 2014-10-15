@@ -18,16 +18,27 @@ gem 'jbuilder',     '2.1.3'#'~> 2.0', '2.2.2' 10-8-2014
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc',         '0.4.1',  group: :doc# '~> 0.4.0'
 
+# Authentication
+gem 'devise',               '3.3.0'# '3.4.0' 10-3-2014
+# Forms
+gem 'simple_form',          '3.0.2'
+# Tagging models
+gem 'acts-as-taggable-on',  '3.3.0'# '~> 3.4', '3.4.2' 9-26-2014
+
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring',   '1.1.3'
+  # REPL shell
   gem 'pry',      '0.10.1'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3',  '1.3.9'
+  # Annotate schema in models
   gem 'annotate', '2.6.5'# '~> 2.6.5'
 end
 
 group :production do
+  # Interface to PostgreSQL
   gem 'pg',             '0.17.1'
+  # Heroku: serve static assets, log to stdout
   gem 'rails_12factor', '0.0.2'# '0.0.3' 10-14-2014
 end
