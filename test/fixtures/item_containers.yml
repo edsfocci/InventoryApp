@@ -7,3 +7,14 @@ one:
 two:
   item_id: 1
   container_id: 1
+
+# == Schema Information
+#
+# Table name: item_containers
+#
+#  id           :integer          not null, primary key
+#  item_id      :integer
+#  container_id :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#
