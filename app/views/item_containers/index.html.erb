@@ -1,0 +1,27 @@
+<h1>Listing item_containers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Container</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @item_containers.each do |item_container| %>
+      <tr>
+        <td><%= item_container.item_id %></td>
+        <td><%= item_container.container_id %></td>
+        <td><%= link_to 'Show', item_container %></td>
+        <td><%= link_to 'Edit', edit_item_container_path(item_container) %></td>
+        <td><%= link_to 'Destroy', item_container, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item container', new_item_container_path %>

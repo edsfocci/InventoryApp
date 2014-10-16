@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @item_container.item_id %>
+</p>
+
+<p>
+  <strong>Container:</strong>
+  <%= @item_container.container_id %>
+</p>
+
+<%= link_to 'Edit', edit_item_container_path(@item_container) %> |
+<%= link_to 'Back', item_containers_path %>
