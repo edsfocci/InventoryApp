@@ -10,6 +10,7 @@ class ContainersController < ApplicationController
   # GET /containers/1
   # GET /containers/1.json
   def show
+    @items = Container.find(params[:id]).items
   end
 
   # GET /containers/new
@@ -69,6 +70,7 @@ class ContainersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def container_params
-      params.require(:container).permit(:name, :description)
+      params.require(:container).permit(:name, :description, :tag_list,
+                                                  :host_container_id, :user_id)
     end
 end

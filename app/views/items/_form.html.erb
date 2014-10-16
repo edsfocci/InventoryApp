@@ -4,6 +4,9 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :description %>
+    <%= f.input :tag_list %>
+    <%= f.hidden_field :container_id,
+                          value: @item.container_id || params[:container_id] %>
   </div>
 
   <div class="form-actions">

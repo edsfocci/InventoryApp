@@ -10,5 +10,21 @@
   <%= @container.description %>
 </p>
 
+<p>
+  <strong>Tags:</strong>
+  <%= @container.tag_list %>
+</p>
+
+<% unless @container.host_container_id == nil %>
+  <p>
+    <strong>Parent Container:</strong>
+    <%= link_to @container.host_container.name, @container.host_container %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_container_path(@container) %> |
 <%= link_to 'Back', containers_path %>
+
+<%= render 'containers/containers' %>
+
+<%= render 'items/items' %>
