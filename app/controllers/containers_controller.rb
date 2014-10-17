@@ -1,10 +1,11 @@
 class ContainersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_container, only: [:show, :edit, :update, :destroy]
 
   # GET /containers
   # GET /containers.json
   def index
-    @containers = Container.all
+    @containers = Container.where(user_id: current_user.id)
   end
 
   # GET /containers/1
