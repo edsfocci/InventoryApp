@@ -5,6 +5,10 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :tag_list %>
+    <%= f.input :is_container, label: false do %>
+      <%= check_box_tag "is_container" %>
+      <strong>Can this hold other items?</strong>
+    <% end %>
     <%= f.hidden_field :user_id, value: @item.user_id || current_user.id %>
     <%= f.hidden_field :container_id,
                           value: @item.container_id || params[:container_id] %>

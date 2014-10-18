@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
+    print params[:is_container].class
 
     respond_to do |format|
       if @item.save

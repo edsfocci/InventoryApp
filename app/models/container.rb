@@ -11,6 +11,7 @@ class Container < ActiveRecord::Base
               class_name:   "Container",
               foreign_key:  "host_container_id"
   # Validations
+  validates_presence_of   :name, :user_id
   validates_uniqueness_of :name, scope: [:host_container_id, :user_id]
   # Includes
   acts_as_taggable
